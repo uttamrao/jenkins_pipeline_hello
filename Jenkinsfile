@@ -1,5 +1,5 @@
 Pipeline{
-any agent {
+agent any
 stages{
 stage('scm checkout')
 
