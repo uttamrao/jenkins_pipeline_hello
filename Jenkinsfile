@@ -1,20 +1,23 @@
-Pipeline{
+Pipeline
+{
 agent any
-stages{
+stages
+{
 stage('scm checkout')
-
-steps{
+{
+steps
+{
 git 'https://github.com/uttamrao/maven-project.git'
 }
 }
-}
-{
 stage('compile code')
 {
-steps{
-  withMaven(jdk: 'localjdk', maven: 'localmaven') {
-    
+steps
+{
+withMaven(jdk: 'localjdk', maven: 'localmaven') 
+sh 'mvn compile'
 
-sh 'mvn compile'}}}
+}
+}
 }
 }
