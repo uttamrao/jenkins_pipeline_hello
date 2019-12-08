@@ -1,18 +1,20 @@
-node {
-    stage('build'){
-        echo "building"
-    }
+Pipeline{
+any agent {
+stages{
+stage('scm checkout')
+
+steps{
+git 'https://github.com/uttamrao/jenkins_pipeline_hello.git'
 }
-node {
-    stage('test'){
-        echo "testing"
-    }
 }
-stage('Get approval'){
-    input "Deploy to qa?"
 }
-node {
-    stage('deploy to qa'){
-        echo "deploying"
-    }
+{
+stage('compile code')
+{
+steps{
+withmaven('mvn:localmaven jdk:LocalJDk')
+
+{
+sh 'mvn compile'}}}
+}
 }
