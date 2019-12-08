@@ -1,4 +1,4 @@
-pipeline
+Pipeline
 {
 agent any
 stages
@@ -15,9 +15,21 @@ stage('compile code')
 steps
 {
 withMaven(jdk: 'localjdk', maven: 'localmaven') 
-{sh 'mvn compile'
+{
+sh 'mvn compile'
+}
+stage('test code')
+{
+steps
+{
+withMaven(jdk: 'localjdk', maven: 'localmaven') 
+{
+sh 'mvn test'
+}
 
 }
 }
-}}
+}
+}
+}
 }
