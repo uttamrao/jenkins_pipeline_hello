@@ -4,7 +4,7 @@ stages{
 stage('scm checkout')
 
 steps{
-git 'https://github.com/uttamrao/jenkins_pipeline_hello.git'
+git 'https://github.com/uttamrao/maven-project.git'
 }
 }
 }
