@@ -40,6 +40,16 @@ sh 'mvn package'
 }
 }
 }
+stage('deploy to tomcat')
+{
+steps
+{
+sshagent (credentials: ['deploy-dev']) 
+{
+sh 'sh 'scp -o StrictHostKeyChecking=no */target/8.war ec2-user@18.189.2.226:/usr/share/tomcat/webapps'
+}
+}
+}
 }
 }
 
