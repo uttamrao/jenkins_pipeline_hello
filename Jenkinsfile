@@ -30,5 +30,17 @@ sh 'mvn test'
 }
 }
 }
+stage('build code')
+{
+steps
+{
+withMaven(jdk: 'localjdk', maven: 'localmaven') 
+{
+sh 'mvn package'
 }
 }
+}
+}
+}
+
+
