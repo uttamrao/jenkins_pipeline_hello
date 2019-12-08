@@ -46,7 +46,7 @@ steps
 {
 sshagent (credentials: ['deploy-dev']) 
 {
-sh 'sh 'scp -o StrictHostKeyChecking=no */target/8.war ec2-user@18.189.2.226:/usr/share/tomcat/webapps'
+ sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@18.189.2.226:/var/lib/tomcat/webapps'
 }
 }
 }
