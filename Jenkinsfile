@@ -12,7 +12,7 @@ git 'https://github.com/uttamrao/maven-project.git'
 stage('compile code')
 {
 steps{
-withmaven('mvn:localmaven jdk:LocalJDk')
+withmaven('mvn:localmaven jdk:localjdk')
 
 {
 sh 'mvn compile'}}}
